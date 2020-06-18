@@ -358,7 +358,7 @@ public class JettyLauncher extends ServletContainerLauncher {
           // Jasper
           "org.apache.jasper.",
           "org.apache.juli.logging.",
-          "org.apache.tomcat.",
+          //"org.apache.tomcat.",
           "org.apache.el.",
           // Xerces
           "org.apache.xerces.",

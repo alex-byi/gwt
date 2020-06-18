@@ -1,0 +1,24 @@
+Initial version from: https://gwt.googlesource.com/gwt/
+    git clone https://gwt.googlesource.com/gwt/
+    git checkout 2.9.0
+
+
+The gwt files patched:
+
+- to position the ruler element off the left edge of the panel to be sure it won't ever be beyond the right edge of the panel and cause overflow:
+Patched file:
+	com\google\gwt\layout\client\LayoutImpl.java (line 60)
+
+- to setInnerText instead of setInnerHtml, to get rid of extra parsing
+Patched file:
+	com\google\gwt\layout\client\LayoutImpl.java (lines 53, 60)
+	com\google\gwt\user\client\ui\TabBar.java (lines 211+)
+
+- to enable ability to use HTTP GET method to send rpc calls
+Patched files:
+    com\google\gwt\user\client\rpc\RpcRequestBuilder.java  (lines 69, 70, 153)
+    com\google\gwt\user\client\rpc\impl\RemoteServiceProxy.java (lines 438)
+
+- to suppress ClassCastException on startup when updating Spring core/security to 5+ version
+Patched files:
+    com\google\gwt\dev\shell\jettyJettyLauncher.java (line 361)
